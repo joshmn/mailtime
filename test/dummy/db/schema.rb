@@ -47,4 +47,16 @@ ActiveRecord::Schema.define(version: 20171107210923) do
     t.string "name"
   end
 
+  create_table "accounts", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+  end
+
+  create_table "account_users", force: :cascade do |t|
+    t.integer "account_id"
+    t.integer "user_id"
+  end
+
+  add_index "account_users", ["account_id", "user_id"], name: "index_account_users_on_account_id_and_user_id"
+
 end

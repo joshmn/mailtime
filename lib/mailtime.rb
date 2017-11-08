@@ -1,3 +1,4 @@
+require 'mailtime/mailtimer'
 require 'mailtime/engine'
 
 require 'mailtime/processor'

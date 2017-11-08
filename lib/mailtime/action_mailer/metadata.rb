@@ -19,7 +19,7 @@ module Mailtime
 
       def mailtime_metadata
       	OpenStruct.new(
-      		:mailer_class => self.class.to_s, 
+      		:mailer_class => self.class.to_s,
       		:mailer_action => self.action_name,
       		:action_variables => instance_variables_map
         )

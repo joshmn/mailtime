@@ -81,6 +81,11 @@ Mailtime doesn't ship with views or authentication for said non-existent views.
 
 It's very opinioniated right now.
 
+### Inspiration
+
+* [Maily](https://github.com/markets/maily)
+* [Maily Herald](https://github.com/Sology/maily_herald)
+
 ### Todo
 
 * Some examples for ERB, ActiveAdmin, RailsAdmin

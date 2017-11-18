@@ -70,3 +70,7 @@ end
 ### Views
 
 Mailtime doesn't ship with views or authentication for said non-existent views. 
+
+### Is it any good?
+
+[Yes.](https://news.ycombinator.com/item?id=3067434)

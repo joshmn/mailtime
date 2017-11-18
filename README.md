@@ -8,8 +8,14 @@ No problem, but it's untested. Check out **Without ActionMailer** below.
 
 ## Mailtime...
 
+**Does**
+
 * Tells you (via ActiveRecord object) that a `thing` has been mailed, what they were mailed, and under what context
 * (optionally) allows you to completely manage your ActionMailer templates (and optional layouts) from ActiveRecord
+
+**Does not**
+
+* Allow you to mail people
 
 ## Installation
 
@@ -70,6 +76,21 @@ end
 ### Views
 
 Mailtime doesn't ship with views or authentication for said non-existent views. 
+
+## About
+
+It's very opinioniated right now.
+
+### Todo
+
+* Some examples for ERB, ActiveAdmin, RailsAdmin
+* Allow you to mail things (e.g. User, Account) using ActiveMailer without touching code (with contexts to query things to mail) 
+* Versioning is probably important since you can edit the mailer's contents, and Mailtime doesn't store the output
+* Maybe Mailtime should store the output?
+* ... maybe Mailtime should build and store the output when a version limit is reached for a particular mailer?
+* Support MySQL and things that don't support JSON columns
+* A configuration file
+* before/after hooks?
 
 ### Is it any good?
 

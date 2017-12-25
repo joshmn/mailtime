@@ -14,13 +14,14 @@ module Mailtime
     private
 
     def create_log
-      Mailtime::Log.create(:user_id => user_id,
-                           :mailer_class => mail.mailtime_metadata.mailer_class,
-                           :mailer_action => mail.mailtime_metadata.mailer_action)
+      Mailtime::Log.create(:thing_id => mail.mailtime_metadata.thing.id,
+                           :thing_type => mail.mailtime_metadata.thing.class.to_s,
+                           :mailer_class => mail.mailtime_metadata.klass,
+                           :mailer_action => mail.mailtime_metadata.action)
     end
 
-    def user_id
-      User.find_for_mailtimer(mail.to).try(:id) || mail.mailtime_metadata.action_variables.stringify_keys['user'].try(:id)
+    def thing
+      mail.mailtime_metadata.thing
     end
 
   end

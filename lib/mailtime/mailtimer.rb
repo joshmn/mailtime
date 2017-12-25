@@ -1,3 +1,6 @@
+#
+# Allows
+#
 module Mailtime
   module Mailtimer
     extend ActiveSupport::Concern
@@ -18,6 +21,8 @@ module Mailtime
       def mailtimer?
         respond_to?(:mailtimer_email_attribute)
       end
+
+      alias_method :mailtime_enabled?, :mailtimer?
 
     end
   end

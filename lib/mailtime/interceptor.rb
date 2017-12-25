@@ -1,3 +1,7 @@
+#
+# Intercepts from ActionMailer::Base upon delivery
+#
+
 module Mailtime
   class Interceptor
     def self.delivering_email(mail)

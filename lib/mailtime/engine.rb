@@ -1,3 +1,7 @@
+require 'rails'
+
+require 'mailtime'
+
 module Mailtime
   class Engine < ::Rails::Engine
 

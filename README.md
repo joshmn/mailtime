@@ -15,7 +15,7 @@ No problem, but it's untested. Check out **Without ActionMailer** below.
 
 **Does not**
 
-* Allow you to mail people
+* Operate as any sort of SMTP/mail protocol service/server
 
 ## Installation
 
@@ -23,11 +23,11 @@ Add to your Gemfile: `gem 'mailtime'`
 
 Run `bundle install`
 
-Next, run the generator to copy over migrations and initializer: 
+Copy over migrations
 
-`$ rails g mailtime:install`
+`$ rake mailtime:install:migrations`
 
-And do the migrate,
+And migrate,
 
 `rake db:migrate`
 
@@ -66,7 +66,8 @@ class MailApiCall
     OpenStruct.new(
       :mailer_class => self.class.to_s, 
       :mailer_action => self.action_name,
-      :action_variables => {:user => @user}
+      :action_variables => {:user => @user},
+      :thing => @thing 
     )
   end
 

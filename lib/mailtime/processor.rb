@@ -7,12 +7,22 @@ module Mailtime
     end
 
     def execute
-      create_log
-      render_body
+      if should_be_processed?
+        create_log
+        render_body
+      end
       self
     end
 
     private
+
+    def should_not_be_processed?
+      mail.mailtime_metadata.klass.constantize.skip_mailtime_for_methods.map(&:to_sym).include?(mail.mailtime_metadata.action.to_sym)
+    end
+
+    def should_be_processed?
+      !should_not_be_processed?
+    end
 
     def create_log
       Mailtime::Log.create(:thing_id => mail.mailtime_metadata.thing.id,

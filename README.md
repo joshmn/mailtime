@@ -44,6 +44,10 @@ Add `mailtimer NAME [options]` to each class that has an `email` attribute assoc
 
 Mailtime serializes a collection of defined instance variables in your mailer method. Additionally, it detects the `Mailtime::Log#thing` by using Rails conventions — if there is an instance variable with a class of Person in PersonMailer/PersonsMailer/PeopleMailer, it will assign the `thing` (polymorphic) to that object.
 
+#### Skip a method
+
+`skip_mailtime_for :welcome` in your mailer class.
+
 ## How it works
 
 Mailtime hooks into `ActionMailer` with an `Interceptor`. It injects some methods into `ActionMailer::Base` which allows

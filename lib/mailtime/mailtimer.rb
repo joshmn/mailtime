@@ -8,6 +8,7 @@ module Mailtime
     module ClassMethods
 
       def mailtimer(email_attribute = :email, options = {})
+        has_many :mailtime_logs, :as => :thing, :class_name => "Mailtime::Log"
         cattr_accessor :mailtimer_email_attribute
         cattr_accessor :mailtimer_options
         self.mailtimer_email_attribute = email_attribute.to_sym

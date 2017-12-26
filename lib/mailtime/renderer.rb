@@ -6,6 +6,7 @@ module Mailtime
     end
 
     # todo: clean
+    # shoudl really return a mail#body object
     def render
       if template
         @mail.mailtime_metadata.action_variables.each do |k,v|
@@ -19,7 +20,7 @@ module Mailtime
         })
         return result
       end
-      @mail.body
+      @mail.body.to_s
     end
 
     private

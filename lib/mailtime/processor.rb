@@ -27,7 +27,7 @@ module Mailtime
     end
 
     def render_klass
-      Mailtime.configuration.renderer
+      Mailtime.configuration.renderer.to_s.safe_constantize || ::Mailtime::Renderer
     end
   end
 end

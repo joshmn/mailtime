@@ -33,14 +33,16 @@ And migrate,
 
 ## Usage
 
+### ActiveRecord Objects
+
 Add `mailtimer NAME [options]` to each class that has an `email` attribute associated with it (or, rather, is emailable)
 
 * NAME is the attribute (within ActiveRecord) that holds the object's email address. Default `email`
 * [options] is your favorite optional hash but is mostly useless as of writing.
 
-## Configuration
+### In your mailer methods
 
-`mailtimer :email_address, :fields => [:to, :cc, :bcc]`
+Mailtime serializes a collection of defined instance variables in your mailer method. Additionally, it detects the `Mailtime::Log#thing` by using Rails conventions — if there is an instance variable with a class of Person in PersonMailer/PersonsMailer/PeopleMailer, it will assign the `thing` (polymorphic) to that object.
 
 ## How it works
 

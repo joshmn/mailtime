@@ -7,7 +7,7 @@ module Mailtime
     def self.delivering_email(mail)
       processor = Mailtime::Processor.new(mail)
       processor.execute
-      mail
+      processor.mail
     end
   end
 end

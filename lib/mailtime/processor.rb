@@ -8,6 +8,7 @@ module Mailtime
 
     def execute
       create_log
+      render_from_database
       self
     end
 
@@ -20,9 +21,9 @@ module Mailtime
                            :mailer_action => mail.mailtime_metadata.action)
     end
 
-    def thing
-      mail.mailtime_metadata.thing
+    def render_from_database
+      renderer = ::Mailtime::Renderer.new(mail)
+      @mail.body = renderer.render
     end
-
   end
 end

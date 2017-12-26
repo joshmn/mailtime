@@ -28,7 +28,8 @@ module Mailtime
       Mailtime::Log.create(:thing_id => mail.mailtime_metadata.thing.id,
                            :thing_type => mail.mailtime_metadata.thing.class.to_s,
                            :mailer_class => mail.mailtime_metadata.klass,
-                           :mailer_action => mail.mailtime_metadata.action)
+                           :mailer_action => mail.mailtime_metadata.action,
+                           :context => mail.mailtime_metadata.context)
     end
 
     def render_body

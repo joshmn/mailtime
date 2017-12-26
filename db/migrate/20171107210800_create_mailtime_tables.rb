@@ -5,6 +5,7 @@ class CreateMailtimeTables < ActiveRecord::Migration
       t.string :thing_type
       t.string :mailer_class
       t.string :mailer_method
+      t.json :context
 
       t.timestamps null: false
     end

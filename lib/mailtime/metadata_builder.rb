@@ -38,6 +38,10 @@ module Mailtime
       end
     end
 
+    def context
+      action_variables.as_json
+    end
+
     def mailtime_template
       @mailtime_template ||= Mailtime::Template.find_by(:klass => klass, :action => action)
     end

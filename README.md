@@ -67,7 +67,7 @@ class MailApiCall
       :mailer_class => self.class.to_s, 
       :mailer_action => self.action_name,
       :action_variables => {:user => @user},
-      :thing => @thing 
+      :thing => @user 
     )
   end
 
@@ -95,7 +95,7 @@ It's very opinioniated right now.
 * Maybe Mailtime should store the output?
 * ... maybe Mailtime should build and store the output when a version limit is reached for a particular mailer?
 * Support MySQL and things that don't support JSON columns
-* A configuration file
+* Mail header API or something
 * before/after hooks?
 
 ### Is it any good?
